@@ -1,0 +1,7 @@
+# IDE files
+/.idea
+/*.iml
+
+# Compiled python files
+*.py[co]
+__pycache__/
