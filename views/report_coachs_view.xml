@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="view_coach_report_tree" model="ir.ui.view">
+		<field name="name">Coach Report</field>
+		<field name="model">golden_ball.report_coachs_model</field>
+		<field name="arch" type="xml">
+			<tree create="false" import="false">
+				<field name="coach"/>
+				<field name="trainig_type"/>
+				<field name="date_workout"/>
+			</tree>
+		</field>
+	</record>
+
+
+	<record id="view_coach_report_pivot" model="ir.ui.view">
+		<field name="name">Coach Report</field>
+		<field name="model">golden_ball.report_coachs_model</field>
+		<field name="arch" type="xml">
+			<pivot>
+				<field name="coach" type="row"/>
+				<field name="trainig_type" type="row"/>
+			</pivot>
+		</field>
+	</record>
+
+
+	<record model="ir.actions.act_window" id="action_report_coach">
+		<field name="name">Отчет по тренирам</field>
+		<field name="res_model">golden_ball.report_coachs_model</field>
+		<field name="view_mode">pivot,tree</field>
+		<field name="context">{'group_by': ('coach')}</field>
+	</record>
+
+</odoo>

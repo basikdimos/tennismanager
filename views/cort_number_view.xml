@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="view_cort_tree" model="ir.ui.view">
+		<field name="name">Cort Tree</field>
+		<field name="model">golden_ball.cort_number_model</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="view_cort_form" model="ir.ui.view">
+		<field name="name">Cort Form</field>
+		<field name="model">golden_ball.cort_number_model</field>
+		<field name="arch" type="xml">
+			<form>
+				<field name="name"/>
+			</form>
+		</field>
+	</record>
+
+
+	<record model="ir.actions.act_window" id="action_cort">
+		<field name="name">Корты</field>
+		<field name="res_model">golden_ball.cort_number_model</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>

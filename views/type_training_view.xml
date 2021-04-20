@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="view_type_training_tree" model="ir.ui.view">
+		<field name="name">Training Tree</field>
+		<field name="model">golden_ball.type_training_model</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+
+<record id="view_type_training_form" model="ir.ui.view">
+		<field name="name">Training Form</field>
+		<field name="model">golden_ball.type_training_model</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<field name="name"/>
+					<field name="number_people"/>
+				</group>
+				<group name="Clients">
+					<field name="client_ids" widget="many2many"/>
+				</group>
+				<group name="Type Training">
+					<field name="type_aboniment"/>
+				</group>
+				<footer>
+					<!-- Кнопки -->
+					<table>
+						<tr>
+							<td>
+								<label for="editor_work"/>
+								<field name="editor_work"/>
+							</td>
+							<td>
+								<label for="creator_work"/>
+								<field name="creator_work"/>
+							</td>
+						</tr>
+					</table>
+				</footer>
+			</form>
+		</field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="action_training">
+		<field name="name">Типы тренировок</field>
+		<field name="res_model">golden_ball.type_training_model</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>

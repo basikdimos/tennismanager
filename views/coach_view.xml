@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+	<record id="view_coach_tree" model="ir.ui.view">
+		<field name="name">Coach Tree</field>
+		<field name="model">golden_ball.coach_model</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_coach_form" model="ir.ui.view">
+		<field name="name">Coach Form</field>
+		<field name="model">golden_ball.coach_model</field>
+		<field name="arch" type="xml">
+			<form>
+				<group name="Contact coach">
+				    <field name="name"/>
+				    <field name="phone"/>
+				    <field name="birthday"/>
+			    </group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="action_coach">
+		<field name="name">Тренер</field>
+		<field name="res_model">golden_ball.coach_model</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>
