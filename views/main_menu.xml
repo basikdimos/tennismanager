@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+	<menuitem id="main_menu" name="Золотой мяч" web_icon="golden_ball,static/description/logo.png"/>
+
+	<menuitem id="works" name="Работы" parent="main_menu" action="action_works"/>
+
+	<menuitem id="bday" name="День рождения" parent="main_menu" action="action_bday"/>
+
+	<menuitem id="2_catalog" name="Справочники" parent="main_menu"/>
+
+	<menuitem id="clients" name="Клиент" parent="2_catalog" action="action_clients"/>
+
+	<menuitem id="coach" name="Тренера" parent="2_catalog" action="action_coach"/>
+
+	<menuitem id="cort" name="Корты" parent="2_catalog" action="action_cort"/>
+
+	<menuitem id="training" name="Тренировки" parent="2_catalog" action="action_training"/>
+
+	<menuitem id="main_aboniment" name="Абонимент" parent="2_catalog"/>
+
+	<menuitem id="aboniment" name="Абонименты" parent="main_aboniment" action="action_aboniment"/>
+
+	<menuitem id="aboniment_type" name="Виды абониментов" parent="main_aboniment" action="action_aboniment_type"/>
+
+	<menuitem id="3_reports" name="Отчеты" parent="main_menu"/>
+
+	<menuitem id="coach_report" name="... по тренерам" parent="3_reports" action="action_report_coach"/>
+
+</odoo>

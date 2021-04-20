@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_client_tree" model="ir.ui.view">
+    	<field name="name">Client Tree</field>
+    	<field name="model">golden_ball.client_model</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="date_last_visit"/>
+			</tree>
+		</field>
+    </record>
+
+
+	<record id="view_client_form" model="ir.ui.view">
+		<field name="name">Client Form</field>
+		<field name="model">golden_ball.client_model</field>
+		<field name="arch" type="xml">
+			<form>
+				<group name="Name client">
+				    <field name="name"/>
+				    <field name="parents_name"/>
+			    </group>
+			    <group name="Phone and address">
+			    	<field name="phone_number"/>
+			    	<field name="address"/>
+			    </group>
+			    <group name="Personal info">
+			    	<field name="birthday"/>
+			    </group>
+			    <group name="Skipping">
+			    	<field name="skipping"/>
+			    </group>
+			    <group name="Workout">
+			    	<field name="date_last_visit"/>
+			    </group>
+			    <group name="Aboniments">
+			    	<field name="aboniment_ids" winget="one2many_list">
+			    		<tree>
+			    			<field name="name"/>
+			    			<field name="number_visits"/>
+			    			<field name="date_begin"/>
+			    			<field name="date_end"/>
+			    		</tree>
+			    	</field>
+			    </group>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_clients">
+		<field name="name">Клиенты</field>
+		<field name="res_model">golden_ball.client_model</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+</odoo>

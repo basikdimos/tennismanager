@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="view_works_tree" model="ir.ui.view">
+		<field name="name">Works Tree</field>
+		<field name="model">golden_ball.works_model</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="coach_id"/>
+				<field name="date_workout"/>
+				<field name="client_ids"/>
+				<field name="cort_id"/>
+				<field name="create_uid"/>
+			</tree>
+		</field>
+	</record>
+
+
+	<record id="view_works_form" model="ir.ui.view">
+		<field name="name">Works Form</field>
+		<field name="model">golden_ball.works_model</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<!-- Кнопки --> 
+					<button name="action_done"
+						               string="Проведена?"
+						               type="object"
+						               class="oe_highlight"/>
+				</header>
+				<sheet>
+					<div class="oe_title">
+						<group>
+							<field name="name"/>
+						</group>
+						<group>
+							<field name="date_workout"/>
+						</group>
+						<group>
+							<field name="coach_id"/>
+						</group>
+						<group>
+							<field name="cort_id"/>
+						</group>
+						<separator/>
+						<group>
+							<field name="is_done"/>
+						</group>
+						<separator/>
+						<group name="Clients">
+							<field name="client_ids" widget="many2many" options="{'no_delete': False}">
+							</field>
+						</group>
+					</div>
+				</sheet>
+				<footer>
+					<!-- Кнопки -->
+					<table>
+						<tr>
+							<td>
+								<!--
+								<label for="editor_work"/>
+								<field name="editor_work"/>
+								-->
+								<label for="write_uid" string="Изменил"/>
+								<field name="write_uid"/>
+							</td>
+							<!--
+							<td>
+								<label for="creator_work"/>
+								<field name="creator_work"/>
+							</td>
+						-->
+							<td>
+								<label for="create_uid" string="Автор"/>
+								<field name="create_uid"/>
+							</td>
+						</tr>
+					</table>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="view_works_calendar" model="ir.ui.view">
+		<field name="model">golden_ball.works_model</field>
+		<field name="arch" type="xml">
+			<calendar string="Calendar" date_start="date_workout" color="cort_id" mode="week" event_open_popup="%(golden_ball.view_works_form)s" quick_add="false">
+				<field name="name"/>
+				<field name="coach_id"/>
+			</calendar>
+		</field>
+	</record>
+
+	<record id="view_filter_works" model="ir.ui.view">
+		<field name="model">golden_ball.works_model</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>
+				<field name="coach_id"/>
+				<field name="date_workout"/>
+				<field name="client_ids"/>
+				<filter name="filter_done" string="Проведена" domain="[('is_done', '!=', False)]"/>
+				<filter name="filter_not_done" string="Не проведена" domain="[('is_done', '=', False)]"/>
+			</search>
+		</field>
+	</record>
+
+
+	<record model="ir.actions.act_window" id="action_works">
+		<field name="name">Работы</field>
+		<field name="res_model">golden_ball.works_model</field>
+		<field name="view_mode">calendar,form,tree</field>
+	</record>
+
+</odoo>

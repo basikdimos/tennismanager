@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_golden_ball_client_model,access.golden_ball.client_model,model_golden_ball_client_model,base.group_user,1,1,1,1
+access_golden_ball_coach_model,access.golden_ball.coach_model,model_golden_ball_coach_model,base.group_user,1,1,1,1
+access_golden_ball_cort_number_model,access.golden_ball.cort_number_model,model_golden_ball_cort_number_model,base.group_user,1,1,1,1
+access_golden_ball_bday_model,access.golden_ball.bday_model,model_golden_ball_bday_model,base.group_user,1,1,1,1
+access_golden_ball_report_coachs_model,access.golden_ball.report_coachs_model,model_golden_ball_report_coachs_model,base.group_user,1,1,1,1
+access_golden_ball_type_training_model,access.golden_ball.type_training_model,model_golden_ball_type_training_model,base.group_user,1,1,1,1
+access_golden_ball_works_model,access.golden_ball.works_model,model_golden_ball_works_model,base.group_user,1,1,1,1
+access_golden_ball_aboniment_model,access.golden_ball.aboniment_model,model_golden_ball_aboniment_model,base.group_user,1,1,1,1
+access_golden_ball_aboniment_type_model,access.golden_ball.aboniment_type_model,model_golden_ball_aboniment_type_model,base.group_user,1,1,1,1
